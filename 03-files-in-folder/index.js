@@ -23,7 +23,7 @@ fs.readdir(
           });
 
         fileSize.then(function (result) {
-          console.log(`${fileOnlyName} - ${fileOnlyExt} - ${result.size}kb`);
+          console.log(`${fileOnlyName} - ${fileOnlyExt} - ${result.size/1000} kb`);
         });
       }
     }
