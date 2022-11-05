@@ -12,8 +12,6 @@ fs.open(path.join(projDistDirection, 'bundle.css'), 'w', (err, file) => {
   if (err) {
     throw err;
   }
-
-  console.log('File is created.');
 });
 
 fsPromises.readdir(stylesDirection, 
@@ -31,7 +29,6 @@ fsPromises.readdir(stylesDirection,
 			const theFile = file.toString();
 			theFile.slice(1);
 			theFile.slice(-1);
-			console.log(theFile, '\n/*------------------------------------------------*/');
 			cssArray.push(theFile);
 			fs.appendFile(path.join(projDistDirection, 'bundle.css'), theFile, (err) => {
 				if (err) {
