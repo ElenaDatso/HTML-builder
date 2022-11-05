@@ -12,7 +12,7 @@ fs.writeFile(textFile, '', (err) => {
   if (err) throw err;
 });
 
-output.write('Введите текст\n');
+output.write('Приветствую! Введи любой текст:\n');
 
 input.on('data', (data) => {
   fs.appendFile(textFile, data, (err) => {
@@ -26,7 +26,7 @@ rl.on('SIGINT', () => {
 });
 
 rl.on('line', (input) => {
-	if (input === 'exit'){
+	if (input.trim() === 'exit'){
     console.log('Спасибо что заглянули!');
     process.exit();
 	}
