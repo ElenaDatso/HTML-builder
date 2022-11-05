@@ -12,15 +12,19 @@ fs.writeFile(textFile, '', (err) => {
 stdout.write('Введите текст\n');
 
 stdin.on('data', (data) => {
-  if (data.toString().includes('exit')){
-	process.exit();
+  if (data.toString().includes('exit')) {
+    console.log('Спасибо что заглянули!');
+    process.exit();
   }
   fs.appendFile(textFile, data, (err) => {
     if (err) throw err;
   });
 });
 
+
+
 process.on('SIGINT', () => {
   console.log('Спасибо что заглянули!');
   process.exit();
 });
+
