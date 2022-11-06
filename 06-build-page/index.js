@@ -58,8 +58,6 @@ fs.mkdir(path.join(projectDir, 'assets'), { recursive: true }, (err) => {
     }
   }
 
-  console.log(textOfFile);
-
   fs.writeFile(targetIndexFile, textOfFile, (err) => {
   	if (err) throw err;
 	console.log('done!')
